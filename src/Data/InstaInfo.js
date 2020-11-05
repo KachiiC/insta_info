@@ -9,7 +9,7 @@ const InstaInfo =
         "is_verified": false,
         "profile_pic_url": "https://scontent-sjc3-1.cdninstagram.com/v/t51.2885-19/s150x150/116267593_621613528768324_4961550799207224528_n.jpg?_nc_ht=scontent-sjc3-1.cdninstagram.com&_nc_ohc=AzJvdVPNe7UAX_6oFs_&oh=e23935ca633c70231e47f6cea7b8f8e6&oe=5FCEE986",
         "stored_profile_pic_url": "",
-        "following": 772,
+        "following": 771,
         "follower": 471,
         "like": 453,
         "comment": 17,

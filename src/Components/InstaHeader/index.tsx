@@ -1,4 +1,5 @@
 import React from 'react'
+// Data
 
 type InstaData = {
     full_name: string,
@@ -13,13 +14,27 @@ type InstaData = {
 const InstaHeader: React.FC<InstaData> = ({
     full_name, biography, username, profile_pic_url,
     following, follower, total_post}) => {
+
+        const profileStats = [
+            {   name: " Post", profile_prop : total_post    }, 
+            {   name: " Following", profile_prop: following },
+            {   name: " Followers", profile_prop: follower  }
+        ]
+
+        const displayProfileStats = profileStats.map((stat) => (
+            <li>
+                <span className="profile-stat-count">
+                    {stat.profile_prop}
+                </span>
+                {stat.name}
+            </li>
+        ))
     
         return (
-
             <div className="container">
                 <div className="profile">
                     <div className="profile-image">
-                        <img src={profile_pic_url} alt="" />
+                        <img src={profile_pic_url} alt="profile-dp" />
                     </div>
                     <div className="profile-user-settings">
                         <h1 className="profile-user-name">{username}</h1>
@@ -30,9 +45,7 @@ const InstaHeader: React.FC<InstaData> = ({
                     </div>
                     <div className="profile-stats">
                         <ul>
-                            <li><span className="profile-stat-count">{total_post}</span> Posts</li>
-                            <li><span className="profile-stat-count">{follower}</span> Followers</li>
-                            <li><span className="profile-stat-count">{following}</span> Following</li>
+                            {displayProfileStats}
                         </ul>
                     </div>
                     <div className="profile-bio">
@@ -40,8 +53,7 @@ const InstaHeader: React.FC<InstaData> = ({
                         <p>{biography}</p>
                     </div>
                 </div>
-            </div>
-            
+            </div> 
         )
 
 }
